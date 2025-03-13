@@ -23,6 +23,8 @@ export default function Home() {
               alt="챔피언 목록 확인"
               width={500}
               height={500}
+              property="true"
+              loading="eager"
             />
             챔피언 목록 보기
           </Link>
@@ -37,6 +39,8 @@ export default function Home() {
               alt="금주 로테이션 확인"
               width={500}
               height={500}
+              property="true"
+              loading="eager"
             />
             금주 로테이션 확인
           </Link>
@@ -51,6 +55,8 @@ export default function Home() {
               alt="금주 로테이션 확인"
               width={500}
               height={500}
+              property="true"
+              loading="eager"
             />
             아이템 목록 보기
           </Link>

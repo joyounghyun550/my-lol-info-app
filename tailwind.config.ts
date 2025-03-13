@@ -9,9 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "gold-light": "#f0e6d2",
+        "lol-blue": "#0ac8b9",
+        "lol-red": "#d01829",
+        "lol-dark": "#010a13",
+        gold: "#c8aa6e",
       },
+    },
+    fontFamily: {
+      beaufort: ['"Beaufort for LOL"', "serif"],
+      spiegel: ["Spiegel", "sans-serif"],
     },
   },
   plugins: [],

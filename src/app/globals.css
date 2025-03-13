@@ -3,25 +3,69 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-gold: #c8aa6e;
+  --color-gold-light: #f0e6d2;
+  --color-blue: #0ac8b9;
+  --color-red: #d01829;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+
+  /* 유사한 폰트로 대체 */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Beaufort for LOL", serif;
+  }
+
+  p,
+  span,
+  div {
+    font-family: "Spiegel", sans-serif;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .text-gold {
+    color: var(--color-gold);
+  }
+
+  .bg-gold {
+    background-color: var(--color-gold);
+  }
+
+  .border-gold {
+    border-color: var(--color-gold);
+  }
+
+  .text-gold-light {
+    color: var(--color-gold-light);
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  @font-face {
+    font-family: "Beaufort for LOL";
+    src: url("../public/fonts/BeaufortforLOL-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Beaufort for LOL2";
+    src: url("../public/fonts/BeaufortforLOL-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Spiegel";
+    src: url("../public/fonts/Spiegel-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
   }
 }
