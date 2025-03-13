@@ -5,6 +5,7 @@ export type Item = {
   plaintext: string;
   from: string[];
   into: string[];
+  inStore: boolean;
   image: {
     full: string;
     sprite: string;
