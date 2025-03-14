@@ -5,11 +5,18 @@ const nextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
+    localPatterns: [
+      {
+        pathname: "/src/public/images/**",
+        search: "",
+      },
+    ],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "ddragon.leagueoflegends.com",
         pathname: "/**",
+        search: "",
       },
     ],
   },

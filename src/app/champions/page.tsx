@@ -19,7 +19,7 @@ const ChampionsPage = async () => {
       {/* 배경 이미지 및 오버레이 */}
       <div className="fixed inset-0 z-0">
         <Image
-          src={championBg} // 리그 오브 레전드 테마 배경 이미지
+          src={championBg}
           alt="Champions background"
           fill
           className="object-cover opacity-20"

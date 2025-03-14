@@ -3,32 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import type { ChampionDetail } from "@/types/Champion";
-
-// 챔피언 데이터 가져오기 함수
-async function getChampionData(
-  championId: string
-): Promise<ChampionDetail | null> {
-  try {
-    const res = await fetch(
-      `${BASE_URL}/cdn/15.5.1/data/ko_KR/champion/${championId}.json`,
-      {
-        next: {
-          revalidate: 86400,
-        },
-      }
-    );
-
-    if (!res.ok) {
-      return null;
-    }
-
-    const data = await res.json();
-    return data.data[championId] as ChampionDetail;
-  } catch (error) {
-    console.error("챔피언 데이터를 가져오는 중 오류 발생:", error);
-    return null;
-  }
-}
+import detailBg from "@/public/images/detail-bg-1.jpg";
+import { getChampionData } from "@/utils/utils/serverApi";
 
 interface PageProps {
   params: {
@@ -48,21 +24,18 @@ const ChampionDetail = async ({ params }: PageProps) => {
     );
   }
 
-  // 배경 이미지의 경로
-  const splashUrl = `${BASE_URL}/cdn/img/champion/splash/${championId}_1.jpg`;
-
   return (
     <div className="relative pb-16">
-      {/* 배경 이미지를 absolute로 설정하여 헤더/푸터를 뚫지 않도록 함 */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+      {/* 배경 이미지 */}
+      <div className="fixed inset-0 z-0">
         <Image
-          src={splashUrl}
-          alt={champion.name}
+          src={detailBg}
+          alt="Champions background"
           fill
-          className="object-cover"
-          priority
+          className="object-cover opacity-20"
+          loading="eager"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-80"></div>
       </div>
 
       {/* 챔피언 정보 컨테이너 */}
@@ -115,6 +88,19 @@ const ChampionDetail = async ({ params }: PageProps) => {
               <div className="mb-8">
                 <div className="text-gold text-xl mb-2">소개</div>
                 <p className="text-lg leading-relaxed">{champion.lore}</p>
+              </div>
+            </div>
+            {/* 오른쪽 챔피언 이미지 */}
+            <div className="md:w-1/2 flex justify-center md:justify-end">
+              <div className="relative w-full max-w-2xl h-96">
+                <Image
+                  src={`${BASE_URL}/cdn/img/champion/centered/${championId}_1.jpg`}
+                  alt={champion.name}
+                  fill
+                  className="object-contain rounded-xl"
+                  priority
+                  loading="eager"
+                />
               </div>
             </div>
           </div>
@@ -175,7 +161,9 @@ const ChampionDetail = async ({ params }: PageProps) => {
 
         {/* 챔피언 특징 */}
         <div className="container mx-auto px-4 py-16 text-white">
-          <h2 className="text-4xl font-bold mb-10 text-center">챔피언 특징</h2>
+          <h2 className="text-4xl font-bold mb-10 text-center">
+            챔피언 능력치
+          </h2>
 
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/2 lg:w-1/4 mb-8">
