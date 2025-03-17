@@ -7,7 +7,7 @@ import { getChampions } from "@/utils/serverApi";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
-import championBg from "@/public/images/champions-bg.jpg";
+import rotationBg from "@/public/images/rotation-bg.jpg";
 
 const RotationPage = () => {
   const { data: rotationData, isLoading: isRotationLoading } = useQuery({
@@ -50,7 +50,7 @@ const RotationPage = () => {
       {/* 배경 이미지 및 오버레이 */}
       <div className="fixed inset-0 z-0">
         <Image
-          src={championBg}
+          src={rotationBg}
           alt="Champions background"
           fill
           className="object-cover opacity-20"
@@ -65,7 +65,7 @@ const RotationPage = () => {
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gold-light">
             로테이션
           </h1>
-          <p className="text-xl max-w-3xl mx-auto">
+          <p className="text-base md:text-xl max-w-3xl mx-auto">
             매 주 화요일 로테이션으로 20명의 챔피언들이 무료로 제공됩니다.
           </p>
         </div>

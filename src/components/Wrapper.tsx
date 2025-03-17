@@ -19,12 +19,12 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
             <div className="flex items-center">
-              <a href="/" className="text-2xl font-bold text-gold">
+              <a href="/" className="text-lg md:text-2xl font-bold text-gold">
                 LoL Champions
               </a>
             </div>
             <div>
-              <ul className="flex space-x-6">
+              <ul className="flex space-x-6 text-sm md:text-xl">
                 <li>
                   <Link
                     href={"/"}
@@ -74,6 +74,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
                 © 2025 Riot Games, Inc. League of Legends와 모든 관련 로고,
                 캐릭터, 이름 및 고유 콘텐츠는 Riot Games, Inc.의 상표, 서비스
                 마크 및 저작권입니다.
+                <br />
                 <span className="text-gray-500 text-sm mt-2">
                   이 사이트는 Riot Games와 공식적으로 연결되어 있지 않습니다.
                 </span>

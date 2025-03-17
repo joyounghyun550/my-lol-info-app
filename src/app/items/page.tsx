@@ -39,10 +39,9 @@ const ItemsPage = async () => {
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gold-light">
             아이템
           </h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            전투에서 승리하기 위한 다양한 아이템들을 살펴보세요. 공격력, 방어력,
-            마법 저항력 등 당신의 챔피언을 강화시킬 수 있는 수백 가지의 아이템이
-            준비되어 있습니다.
+          <p className="text-base md:text-xl max-w-3xl mx-auto">
+            전투에서 승리하기 위한 다양한 아이템들을 살펴보세요. <br /> 당신의
+            챔피언을 강화시킬 수 있는 아이템이 준비되어 있습니다.
           </p>
         </div>
 
