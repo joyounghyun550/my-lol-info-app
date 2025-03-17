@@ -107,13 +107,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* 필요시 푸터 추가 */}
-        <div className="py-8 mt-auto">
-          <p className="text-center text-gray-500 text-sm">
-            © 2025 전설의 여정. All rights reserved.
-          </p>
-        </div>
       </div>
     </div>
   );
