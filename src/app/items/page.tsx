@@ -59,12 +59,12 @@ const ItemsPage = async () => {
                 {/* 아이템 이미지 컨테이너 */}
                 <div className="relative w-full mb-2 flex justify-center">
                   <div className="absolute inset-0 bg-gradient-radial from-gold-light to-transparent opacity-10 group-hover:opacity-20 transition-opacity rounded-full"></div>
-                  <div className="h-12 w-12 flex items-center justify-center">
+                  <div className="h-16 w-16 flex items-center justify-center">
                     <Image
                       src={`${BASE_URL}/cdn/15.5.1/img/item/${item.image.full}`}
                       alt={item.name}
-                      width={48}
-                      height={48}
+                      width={64}
+                      height={64}
                       className="object-contain"
                     />
                   </div>
