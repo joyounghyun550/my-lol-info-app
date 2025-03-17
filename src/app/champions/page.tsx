@@ -33,9 +33,9 @@ const ChampionsPage = async () => {
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gold-light">
             챔피언
           </h1>
-          <p className="text-base md:text-xl max-w-3xl mx-auto">
+          <p className="sm:text-base md:text-xl max-w-3xl mx-auto">
             다양한 챔피언들 중에서 당신의 플레이 스타일에 맞는 챔피언을
-            찾아보세요. <br />
+            찾아보세요. <br className=":visible" />
             투사, 암살자, 마법사, 서포터 등 80개 이상의 챔피언이 있습니다.
           </p>
         </div>

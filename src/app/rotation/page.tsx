@@ -104,8 +104,9 @@ const RotationPage = () => {
             로테이션
           </h1>
           <p className="text-base md:text-xl max-w-3xl mx-auto">
-            매 주 화요일 로테이션으로 {filteredChampions.length}명의 챔피언들이
-            무료로 제공됩니다.
+            매 주 화요일 로테이션으로
+            <br className="md:hidden" /> {filteredChampions.length}명의
+            챔피언들이 무료로 제공됩니다.
           </p>
         </div>
 

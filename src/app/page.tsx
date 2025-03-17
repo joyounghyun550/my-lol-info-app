@@ -61,7 +61,7 @@ const Home = () => {
             <h1 className="text-4xl md:text-7xl font-bold mb-4 text-gold-light">
               전설의 여정
             </h1>
-            <p className="text-lg md:text-2xl max-w-2xl mx-auto mb-8">
+            <p className="text-base md:text-xl max-w-2xl mx-auto mb-8">
               세계를 탐험하고 나에게 맞는 챔피언을 발견하세요
             </p>
           </div>
