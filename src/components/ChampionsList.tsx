@@ -52,7 +52,7 @@ const ChampionsList: React.FC<ChampionsListProps> = ({ initialChampions }) => {
 
     setLoading(true);
 
-    // 다음 페이지 데이터 로드
+    // 다음 페이지 데이터 로드 (지연 시간 추가로 로딩 시각화)
     setTimeout(() => {
       const nextPage = page + 1;
       const nextChampions = initialChampions.slice(0, nextPage * itemsPerPage);

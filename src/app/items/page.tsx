@@ -1,15 +1,10 @@
 import { BASE_URL } from "@/constants/api";
-import { Item } from "@/types/Item";
 import Image from "next/image";
 import itemsBg from "@/public/images/item-bg.jpg"; // You'll need to add this image
+import { fetchItemList } from "@/utils/serverApi";
 
 const ItemsPage = async () => {
-  const res = await fetch(`${BASE_URL}/cdn/15.5.1/data/ko_KR/item.json`, {
-    cache: "force-cache",
-  });
-
-  const data = await res.json();
-  const itemsArray: Item[] = Object.values(data.data);
+  const itemsArray = await fetchItemList();
   const itemFiltering = itemsArray.filter((item) => {
     return item.plaintext !== "" && item.inStore !== false;
   });

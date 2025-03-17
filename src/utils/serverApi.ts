@@ -1,5 +1,8 @@
+"use server";
+
 import { BASE_URL } from "@/constants/api";
 import { Champion, ChampionDetail } from "@/types/Champion";
+import { Item } from "@/types/Item";
 
 // 챔피언 데이터 가져오기
 export async function getChampions() {
@@ -40,12 +43,12 @@ export async function getDetailChampionData(
   }
 }
 
-// export async function fetchItemList(): Promise<Item[]> {
-//   const res = await fetch(`${BASE_URL}/cdn/15.5.1/data/ko_KR/item.json`, {
-//     cache: "force-cache",
-//   });
+export async function fetchItemList(): Promise<Item[]> {
+  const res = await fetch(`${BASE_URL}/cdn/15.5.1/data/ko_KR/item.json`, {
+    cache: "force-cache",
+  });
 
-//   const data = await res.json();
-
-//   return data.data;
-// }
+  const data = await res.json();
+  const itemsArray: Item[] = Object.values(data.data);
+  return itemsArray;
+}
