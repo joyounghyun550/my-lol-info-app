@@ -86,4 +86,5 @@ export interface ChampionDetail {
   };
   spells: ChampionSpell[];
   passive: ChampionPassive;
+  blurb: string;
 }

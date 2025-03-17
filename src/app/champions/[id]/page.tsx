@@ -12,6 +12,14 @@ interface PageProps {
   };
 }
 
+export const generateMetadata = async ({ params }: PageProps) => {
+  const data = await getDetailChampionData(params.id);
+  return {
+    title: `${data?.name} - My Riot App`,
+    description: data?.blurb,
+  };
+};
+
 const ChampionDetail = async ({ params }: PageProps) => {
   const championId = params.id;
   const champion = await getDetailChampionData(championId);
@@ -32,7 +40,11 @@ const ChampionDetail = async ({ params }: PageProps) => {
           src={detailBg}
           alt="Champions background"
           fill
-          className="object-cover opacity-20"
+          sizes="(min-width: 400px) 50vw, 100vw"
+          style={{
+            objectFit: "cover",
+          }}
+          className="opacity-20"
           loading="eager"
           priority
         />
@@ -105,9 +117,13 @@ const ChampionDetail = async ({ params }: PageProps) => {
             <div className="w-full md:w-1/2 flex justify-center md:justify-end mb-6 md:mb-0">
               <div className="relative w-full aspect-[4/3] max-w-md md:max-w-lg">
                 <Image
-                  src={`${BASE_URL}/cdn/img/champion/centered/${championId}_1.jpg`}
+                  src={`${BASE_URL}/cdn/img/champion/splash/${championId}_1.jpg`}
                   alt={champion.name}
                   fill
+                  sizes="(min-width: 400px) 50vw, 100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
                   className="object-contain rounded-lg"
                   priority
                 />

@@ -3,6 +3,13 @@ import championBg from "@/public/images/champions-bg.jpg";
 import { getChampions } from "@/utils/serverApi";
 import ChampionsList from "@/components/ChampionsList";
 
+export const generateMetadata = async () => {
+  return {
+    title: "챔피언 페이지 - My Riot App",
+    description: "리그 오브 레전드 챔피언 목록",
+  };
+};
+
 const ChampionsPage = async () => {
   const { championArray } = await getChampions();
 

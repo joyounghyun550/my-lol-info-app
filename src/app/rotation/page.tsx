@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
 import rotationBg from "@/public/images/rotation-bg.jpg";
+import Loading from "../loading";
 
 const RotationPage = () => {
   // 챔피언 로테이션 데이터 가져오기
@@ -18,7 +19,7 @@ const RotationPage = () => {
   } = useQuery({
     queryKey: ["rotation"],
     queryFn: getChampionRotation,
-    staleTime: 1000 * 60 * 60, // 1시간 동안 데이터를 신선하게 유지
+    staleTime: 1000 * 60 * 60 * 24, // 24시간 동안 데이터를 신선하게 유지
   });
 
   // 모든 챔피언 데이터 가져오기
@@ -32,17 +33,12 @@ const RotationPage = () => {
       const { championArray } = await getChampions();
       return championArray;
     },
-    staleTime: 1000 * 60 * 60 * 24, // 24시간 동안 데이터를 신선하게 유지
+    staleTime: 1000 * 60 * 60 * 24 * 7, // 일주일 동안 데이터를 신선하게 유지
   });
 
   // 로딩 중 상태 표시
   if (isRotationLoading || isChampionsLoading) {
-    return (
-      <div className="text-center mt-8 pb-8 h-20">
-        <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-gold border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"></div>
-        <p className="mt-2 text-gold">로딩 중...</p>
-      </div>
-    );
+    return <Loading />;
   }
 
   // 에러 처리

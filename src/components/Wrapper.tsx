@@ -24,7 +24,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
               </a>
             </div>
             <div>
-              <ul className="flex space-x-6 text-sm md:text-xl">
+              <ul className="flex space-x-4 md:space-x-6 text-sm md:text-xl">
                 <li>
                   <Link
                     href={"/"}

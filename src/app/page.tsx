@@ -85,6 +85,10 @@ const Home = () => {
                       src={feature.image}
                       alt={feature.title}
                       fill
+                      sizes="(min-width: 400px) 50vw, 100vw"
+                      style={{
+                        objectFit: "cover",
+                      }}
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
