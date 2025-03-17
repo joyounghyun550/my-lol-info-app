@@ -71,16 +71,21 @@ const ItemsPage = async () => {
                 </div>
 
                 {/* 아이템 정보 */}
-                <div className="w-full text-center">
-                  <h2 className="font-semibold text-xs sm:text-sm text-gold-light mb-1 group-hover:text-gold transition-colors line-clamp-1">
+                <div className="flex flex-col w-full text-center gap-2 mt-2">
+                  <h2 className="font-semibold text-xs sm:text-sm text-gold-light group-hover:text-gold transition-colors line-clamp-1">
                     {item.name}
                   </h2>
-                  <p className="text-xs text-gray-400 line-clamp-2 h-8">
+                  <p className="text-xs text-gray-400 line-clamp-2">
                     {item.plaintext}
                   </p>
-                  <p className="text-xs text-gray-300 mt-1">
-                    {item.gold && `${item.gold.total} 골드`}
-                  </p>
+                  <div className="flex flex-col items-center justify-center">
+                    <p className="text-xs text-gray-300 mt-1">
+                      {`구매골드: ${item.gold.total}`}
+                    </p>
+                    <p className="text-xs text-gray-300 mt-1">
+                      {`판매골드: ${item.gold.sell}`}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
