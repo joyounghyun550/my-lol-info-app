@@ -1,8 +1,23 @@
 import { BASE_URL } from "@/constants/api";
-import { ChampionDetail } from "@/types/Champion";
+import { Champion, ChampionDetail } from "@/types/Champion";
 
-// 챔피언 데이터 가져오기 함수
-export async function getChampionData(
+// 챔피언 데이터 가져오기
+export async function getChampions() {
+  const res = await fetch(`${BASE_URL}/cdn/15.5.1/data/ko_KR/champion.json`, {
+    next: {
+      revalidate: 86400,
+    },
+  });
+
+  const data = await res.json();
+
+  const championArray: Champion[] = Object.values(data.data);
+
+  return { championArray };
+}
+
+// 상세 페이지 챔피언 데이터 가져오기 함수
+export async function getDetailChampionData(
   championId: string
 ): Promise<ChampionDetail | null> {
   try {

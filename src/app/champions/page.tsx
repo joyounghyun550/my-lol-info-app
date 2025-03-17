@@ -1,18 +1,11 @@
 import { BASE_URL } from "@/constants/api";
-import { Champion } from "@/types/Champion";
 import Image from "next/image";
 import Link from "next/link";
 import championBg from "@/public/images/champions-bg.jpg";
+import { getChampions } from "@/utils/serverApi";
 
 const ChampionsPage = async () => {
-  const res = await fetch(`${BASE_URL}/cdn/15.5.1/data/ko_KR/champion.json`, {
-    next: {
-      revalidate: 86400,
-    },
-  });
-
-  const data = await res.json();
-  const championArray: Champion[] = Object.values(data.data);
+  const { championArray } = await getChampions();
 
   return (
     <div className="min-h-screen bg-black text-white py-16">

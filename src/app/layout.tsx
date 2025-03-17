@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Wrapper from "@/components/Wrapper";
+import Providers from "@/providers/RQProviders";
 
 export const metadata: Metadata = {
   title: "League of Legends Champions",
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <Wrapper>{children}</Wrapper>
+        <Providers>
+          <Wrapper>{children}</Wrapper>
+        </Providers>
       </body>
     </html>
   );

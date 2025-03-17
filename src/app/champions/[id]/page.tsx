@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import type { ChampionDetail } from "@/types/Champion";
 import detailBg from "@/public/images/detail-bg-1.jpg";
-import { getChampionData } from "@/utils/utils/serverApi";
+import { getDetailChampionData } from "@/utils/serverApi";
 
 interface PageProps {
   params: {
@@ -14,7 +14,7 @@ interface PageProps {
 
 const ChampionDetail = async ({ params }: PageProps) => {
   const championId = params.id;
-  const champion = await getChampionData(championId);
+  const champion = await getDetailChampionData(championId);
 
   if (!champion) {
     return (
