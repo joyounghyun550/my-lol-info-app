@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LoL Info App
 
-## Getting Started
+![Image](https://github.com/user-attachments/assets/de1e2fa3-2ad7-4c3b-8078-a296ef974ddf)
 
-First, run the development server:
+개요
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+이 애플리케이션은 League of Legends 게임 정보를 조회할 수 있는 웹 서비스입니다.
+
+## 기능
+
+챔피언 정보: 모든 챔피언의 정보와 스킬을 제공합니다.
+게임 아이템 정보: 현재 게임에서 사용되는 아이템을 제공합니다.
+로테이션 정보: 매주 화요일 변경되는 로테이션 챔피언 정보를 제공합니다.
+
+## 배포
+```
+https://my-lol-info-app.vercel.app/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 설치
+```
+# 저장소 클론
+git clone https://github.com/yourusername/my-lol-info-app.git
+cd my-lol-info-app
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 의존성 설치
+yarn install
+```
 
-## Learn More
+## 환경 설정
+.env 파일을 프로젝트 루트에 생성하고 Riot Games API 키를 설정합니다:
+```
+RIOT_API_KEY=your-api-key-here
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 개발 서버 실행
+```
+yarn dev
+개발 서버는 기본적으로 http://localhost:3000에서 실행됩니다.
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 빌드
+```
+yarn build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 프로덕션 서버 실행
+```
+yarn start
+```
 
-## Deploy on Vercel
+## 기술 스택
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+Frontend: React.js, Next.js, Tailwind CSS
+Backend: Next.js API Routes
+API: Riot Games API
+배포: Vercel
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API 키 발급 방법
+
+Riot Developer Portal에 가입합니다.
+개발자 계정으로 로그인 후 API 키를 발급받습니다.
+개발 단계에서는 Development API Key를 사용하고, 프로덕션에는 Production API Key를 신청해야 합니다.
