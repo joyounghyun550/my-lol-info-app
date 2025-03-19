@@ -46,7 +46,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-80"></div>
       </div>
 
-      {/* 메인 콘텐츠 - flex direction column으로 변경하여 스크롤 가능하게 함 */}
+      {/* 메인 콘텐츠 */}
       <div className="relative flex flex-col min-h-screen">
         {/* 상단 히어로 섹션 */}
         <div className="flex flex-col justify-center items-center text-center px-4 pt-16">
@@ -67,7 +67,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* 기능 목록 섹션 - 별도의 섹션으로 분리 */}
+        {/* 기능 목록 섹션 */}
         <div className="w-full py-6 md:py-10 px-4">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gold-light">

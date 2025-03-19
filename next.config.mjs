@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    NEXT_PUBLIC_RIOT_API_KEY: process.env.NEXT_PUBLIC_RIOT_API_KEY,
+    RIOT_API_KEY: process.env.RIOT_API_KEY,
   },
   images: {
     formats: ["image/avif", "image/webp"],

@@ -15,7 +15,7 @@ const ChampionsPage = async () => {
 
   return (
     <div className="min-h-screen bg-black text-white py-16">
-      {/* 배경 이미지 및 오버레이 */}
+      {/* 배경 이미지  */}
       <div className="fixed inset-0 z-0">
         <Image
           src={championBg}

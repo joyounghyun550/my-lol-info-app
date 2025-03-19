@@ -4,7 +4,7 @@ import { ChampionRotations } from "@/types/ChampionRotation";
 export async function GET() {
   try {
     // 환경 변수에서 API 키 가져오기
-    const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
+    const apiKey = process.env.RIOT_API_KEY;
 
     if (!apiKey) {
       return NextResponse.json(
